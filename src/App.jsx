@@ -11,8 +11,6 @@ function App() {
     setSearchTerm(term);
   };
 
-  console.log(searchTerm, 10);
-
   return (
     <>
       <Navbar onSearch={handleNavbarSearch}/>
