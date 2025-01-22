@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import useEventsData from '../../hooks/useEventsData';
 import EventItem from "./componentes/EventItem";
 import eventJSON from '../../data/events.json';
 import data from '../../data/events.json';
@@ -8,10 +9,9 @@ import data from '../../data/events.json';
 
 const Events = ({ searchValue }) => {
 
+    const {events} = useEventData();
     // const [data] = useState(eventJSON);
-
-    //Object destructing
-    const { _embedded: {events}} = data;
+    // const { _embedded: {events}} = data;
 
     const handleEventItemClick = (id) =>{
         console.log('evento clickeando:', id);
