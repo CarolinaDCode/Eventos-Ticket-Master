@@ -9,12 +9,20 @@ import data from '../../data/events.json';
 
 const Events = ({ searchValue }) => {
 
-    const {events} = useEventData();
+    const {events, isLoading, error} = useEventsData();
     // const [data] = useState(eventJSON);
     // const { _embedded: {events}} = data;
 
     const handleEventItemClick = (id) =>{
         console.log('evento clickeando:', id);
+    }
+
+    if(error) {
+        return <div>Ha ocurrido un error</div>;
+    }
+
+    if(isLoading) {
+        return <div>Cargando resultados ...</div>;
     }
 
     const renderEvents = () => {
